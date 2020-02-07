@@ -1,0 +1,70 @@
+{
+  "npmScope": "todo",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "todo": {
+      "tags": []
+    },
+    "todo-e2e": {
+      "tags": [],
+      "implicitDependencies": ["todo"]
+    },
+    "todo-domain": {
+      "tags": []
+    },
+    "todo-data-access": {
+      "tags": []
+    },
+    "todo-feature": {
+      "tags": []
+    },
+    "todo-shell": {
+      "tags": []
+    },
+    "domain": {
+      "tags": []
+    },
+    "ui-header": {
+      "tags": []
+    },
+    "ui-todos-table": {
+      "tags": []
+    },
+    "chcfh": {
+      "tags": []
+    },
+    "test": {
+      "tags": []
+    },
+    "hhj": {
+      "tags": []
+    },
+    "todo-as": {
+      "tags": []
+    },
+    "shared-ui-add-edit-todo-form": {
+      "tags": []
+    },
+    "todo-shared-ui-add-edit-todo-form": {
+      "tags": []
+    },
+    "ui-todo-table-form-wrapper": {
+      "tags": []
+    },
+    "libs-todo-shared-ui-todo-table-form-wrapper": {
+      "tags": []
+    },
+    "todo-shared-ui-todo-table-form-wrapper": {
+      "tags": []
+    }
+  }
+}

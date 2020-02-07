@@ -1,0 +1,11 @@
+.add-edit-form {
+  display: flex;
+}
+
+.btns {
+  display: flex;
+}
+
+.btns > button {
+  margin-left: .5rem;
+}

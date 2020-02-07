@@ -1,0 +1,16 @@
+<form class="add-edit-form">
+
+  <mat-form-field>
+    <input #taskDescriptionInput [value]="taskDescription" name="taskDescription" matInput placeholder="Task description">
+  </mat-form-field>
+
+  <div class="btns">
+    <button (click)="handleSubmit()" mat-fab color="accent" type="submit">
+      {{addingMode ? 'Add' : 'Edit'}}
+    </button>
+    <button [style.display]="addingMode ? 'none' :  'inline'" (click)="cancelTodoSelection.emit()" mat-fab color="accent" type="submit">
+      Cancel
+    </button>
+  </div>
+
+</form>

@@ -1,0 +1,56 @@
+.todos-wrapper {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+span {
+  font-size: 1.3rem;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 0;
+  padding-inline-start: 1.6rem;
+}
+
+.noActiveInfo {
+  font-size: 1rem;
+}
+
+ .finished {
+   text-decoration: line-through;
+   display: block;
+ }
+
+button {
+  float: right;
+  margin-left: .5rem;
+}
+
+.pending-todo-buttons-wrapper {
+  margin-top: 0.6rem;
+  display : flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pending-todo-buttons-wrapper > .btns {
+  transition: .3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pending-todo-buttons-wrapper:hover  > .btns{
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mb {
+  margin-bottom: 1.2rem;
+  display: inline-block;
+}
+
+hr {
+  margin: 2rem 0;
+}

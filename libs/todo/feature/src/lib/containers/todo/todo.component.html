@@ -1,0 +1,11 @@
+<div class="container">
+  <todo-add-edit-form (cancelTodoSelection)="facade.cancelTodoSelection()"
+    (editTodo)="facade.editTodo($event)"
+    (addTodo)="facade.addTodo($event)"
+    [selectedTodo]="selectedTodo$ | async"></todo-add-edit-form>
+  <todo-todos-table (setTodoAsFinished)="facade.setTodoAsFinished($event)"
+      (deleteTodo)="facade.deleteTodo($event)"
+      (selectForEdition)="facade.selectTodo($event)"
+      [activeTodos]="activeTodos$ | async"
+      [finishedTodos]="finishedTodos$ | async"></todo-todos-table>
+</div>

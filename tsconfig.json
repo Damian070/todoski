@@ -1,0 +1,54 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@todo/to-do": ["libs/to-do/src/index.ts"],
+      "@todo/todos": ["libs/todos/src/index.ts"],
+      "@todo/to-dos": ["libs/to-dos/src/index.ts"],
+      "@todo/todo/to-dos": ["libs/todo/to-dos/src/index.ts"],
+      "@todo/todo/domain": ["libs/todo/domain/src/index.ts"],
+      "@todo/todo/data-access": ["libs/todo/data-access/src/index.ts"],
+      "@todo/todo/feature": ["libs/todo/feature/src/index.ts"],
+      "@todo/todo/shell": ["libs/todo/shell/src/index.ts"],
+      "@todo/domain": ["libs/domain/src/index.ts"],
+      "@todo/ui-header": ["libs/ui-header/src/index.ts"],
+      "@todo/ui-todos-table": ["libs/ui-todos-table/src/index.ts"],
+      "ui-add-edit-todo-form": ["dist/ui-add-edit-todo-form"],
+      "ui-add-edit-todo-form/*": ["dist/ui-add-edit-todo-form/*"],
+      "@todo/chcfh": ["libs/chcfh/src/index.ts"],
+      "@todo/test": ["libs/test/src/index.ts"],
+      "@todo/hhj": ["libs/hhj/src/index.ts"],
+      "@todo/todo/as": ["libs/todo/as/src/index.ts"],
+      "@todo/shared/ui-add-edit-todo-form": [
+        "libs/shared/ui-add-edit-todo-form/src/index.ts"
+      ],
+      "@todo/todo/shared/ui-add-edit-todo-form": [
+        "libs/todo/shared/ui-add-edit-todo-form/src/index.ts"
+      ],
+      "@todo/ui-todo-table-form-wrapper": [
+        "libs/ui-todo-table-form-wrapper/src/index.ts"
+      ],
+      "@todo/libs/todo/shared/ui-todo-table-form-wrapper": [
+        "libs/libs/todo/shared/ui-todo-table-form-wrapper/src/index.ts"
+      ],
+      "@todo/todo/shared/ui-todo-table-form-wrapper": [
+        "libs/todo/shared/ui-todo-table-form-wrapper/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
