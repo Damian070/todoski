@@ -37,7 +37,7 @@
     <br>
     <mat-checkbox
       class="finished"
-                  (click)="prevDefault($event)"
+      disabled="true"
                   checked="true"
                   *ngFor="let todo of finishedTodos">
       {{todo.goal}}

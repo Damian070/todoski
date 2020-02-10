@@ -3,12 +3,11 @@ import {
   Component,
   EventEmitter,
   Input,
-  Output,
-  ViewChild, ElementRef
+  Output
 } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 
-import {Todo} from "../../../../../domain/src/lib/interfaces/todo.interface";
+import {Todo} from "@todo/todo/domain";
 
 @Component({
   selector: 'todo-add-edit-form',
@@ -42,7 +41,7 @@ export class TodoAddEditFormComponent {
   }
 
   handleSubmit():void {
-    const  {value } = this.todoForm.controls.taskDescription;
+    const  { value } = this.todoForm.controls.taskDescription;
 
     !this.selectedTodo ?  value.length > 0 && this.add(value) : this.editTodo.emit({goal: value, id: this.selectedTodo.id});
   }

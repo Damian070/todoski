@@ -26,8 +26,4 @@ export class TodosTableComponent {
   select(e):void {
     this.selectForEdition.emit(e);
   }
-
-  prevDefault(e):void {
-    e.preventDefault()
-  }
 }
