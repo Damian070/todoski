@@ -116,7 +116,7 @@ export function reducer(
 
     case TodosActionTypes.UpdateTodosFromDP: {
 
-      state = action.payload;
+      state = action.payload || initialState;
 
       break;
     }

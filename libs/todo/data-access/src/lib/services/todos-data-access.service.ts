@@ -25,18 +25,6 @@ export class TodosDataAccessService {
       todos = JSON.parse(
         localStorage.getItem('todos')
       );
-    } else {
-      todos = {
-        finished: {
-          ids: [],
-          entities: {}
-        },
-        active: {
-          ids: [],
-          entities: {}
-        },
-        selected: null
-      }
     }
 
     return of(todos);
