@@ -32,12 +32,12 @@ export class TodoAddEditFormComponent {
   @Output() cancelTodoSelection: EventEmitter<void> = new EventEmitter();
   @Output() editTodo: EventEmitter<any> = new EventEmitter();
 
-  add(e) {
+  add(e):void {
     const id = Date.now();
     e.length < 1 || this.addTodo.emit({id, goal: e});
   }
 
-  handleSubmit() {
+  handleSubmit():void {
     const  {value } = this.taskDescriptionInput.nativeElement;
 
     const { addingMode, editTodo } = this;

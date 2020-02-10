@@ -3,7 +3,6 @@ import {Observable} from "rxjs";
 
 import {Todo} from "../../../../../domain/src/lib/interfaces/todo.interface";
 import {TodosFacade} from '../../../../../data-access/src/lib/+state/todos.facade';
-import {TodosEntitiesState} from "@todo/todo/data-access";
 
 @Component({
   selector: 'todo-todo',

@@ -10,16 +10,6 @@ import {TodosDataAccessService} from "../services/todos-data-access.service";
 @Injectable()
 export class TodosEffects {
 
-  // @Effect({dispatch: false})
-  // saveToDP$ = this.actions$.pipe(
-  //   ofType(TodosActionTypes.FinishTodo, TodosActionTypes.AddTodo, TodosActionTypes.DeleteTodo, TodosActionTypes.EditTodo),
-  //   map(action => {
-  //   this.store.pipe(
-  //     take(1),
-  //     pluck('todos')
-  //   ).subscribe(state => this.dataAccessService.syncTodosWithLocalStorage(state));
-  // }));
-
   @Effect()
   LoadFromDP$ = this.actions$.pipe(
     ofType(TodosActionTypes.LoadTodosFromLocalStorage),

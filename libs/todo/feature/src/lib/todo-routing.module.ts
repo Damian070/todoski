@@ -4,7 +4,7 @@ import {TodoComponent} from './containers/todo/todo.component'
 
 const routes: Routes = [
   { path: '', component: TodoComponent, pathMatch: 'full' }
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -32,4 +32,4 @@ export const todosQuery = {
   getActiveArray,
   getSelected,
   getFinishedArray
-}
+};

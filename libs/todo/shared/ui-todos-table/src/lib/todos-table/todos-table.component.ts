@@ -15,19 +15,19 @@ export class TodosTableComponent {
   @Output() deleteTodo: EventEmitter<number> = new EventEmitter();
   @Output() selectForEdition: EventEmitter<Todo> = new EventEmitter();
 
-  finish(e) {
+  finish(e):void {
     this.setTodoAsFinished.emit(e);
   }
 
-  delete(e) {
+  delete(e):void {
     this.deleteTodo.emit(e);
   }
 
-  select(e) {
+  select(e):void {
     this.selectForEdition.emit(e);
   }
 
-  prevDefault(e) {
+  prevDefault(e):void {
     e.preventDefault()
   }
 }

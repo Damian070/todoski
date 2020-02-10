@@ -1,5 +1,4 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {RouterModule} from "@angular/router";
 import {pluck, take} from "rxjs/operators";
 import {Store} from "@ngrx/store";
 
@@ -14,22 +13,20 @@ import {TodosPartialState} from "@todo/todo/data-access";
 export class TodoContainerComponent implements OnInit {
 
   @HostListener('window:unload', ['$event'])
-  unloadHandler(event) {
+  unloadHandler(event):void {
     this.saveToDP();
   }
 
   @HostListener('window:beforeunload', ['$event'])
-  beforeUnloadHander(event) {
+  beforeUnloadHander(event):null {
     return null;
   }
 
-  saveToDP() {
+  saveToDP():void {
       this.store$.pipe(
         take(1),
         pluck('todos')
       ).subscribe(state => this.dataAccessService.syncTodosWithLocalStorage(state));
-
-    // localStorage.removeItem('todos')
   }
 
   constructor(private dataAccessService: TodosDataAccessService, private store$: Store<TodosPartialState>) { }
