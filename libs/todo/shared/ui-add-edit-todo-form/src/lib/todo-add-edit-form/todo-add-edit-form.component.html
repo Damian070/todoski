@@ -9,7 +9,7 @@
     <button [disabled]="!todoForm.valid" mat-fab color="accent" type="submit">
       {{!selectedTodo ? 'Add' : 'Edit'}}
     </button>
-    <button [style.display]="selectedTodo ? 'inline' : 'none' " (click)="cancelTodoSelection.emit()" (click)="prevDefault($event)" mat-fab
+    <button [style.display]="selectedTodo ? 'inline' : 'none' " (click)="prevDefault($event); cancelTodoSelection.emit()" mat-fab
             color="accent">
       Cancel
     </button>

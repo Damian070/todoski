@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from "rxjs";
 
-import TodoListInterface from "../../../../domain/src/lib/interfaces/todoList.interface";
+import { TodoStateInterface }from '@todo/todo/domain'
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +16,10 @@ export class TodosDataAccessService {
     localStorage.setItem('todos',  json);
   }
 
-  loadTodosFromLocalStorage():Observable<TodoListInterface> {
+  loadTodosFromLocalStorage():Observable<TodoStateInterface> {
     const todosList:string = localStorage.getItem('todos');
 
-    let todos: TodoListInterface;
+    let todos: TodoStateInterface;
 
     if(this.isJson(todosList)  ) {
       todos = JSON.parse(

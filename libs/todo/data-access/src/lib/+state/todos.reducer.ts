@@ -1,24 +1,18 @@
 import {fromTodosActions} from './todos.actions';
 import {EntityState, createEntityAdapter} from '@ngrx/entity'
 
-import {Todo} from '@todo/todo/domain'
+import { Todo, TodoStateInterface }from '@todo/todo/domain'
 
 export const TODOS_FEATURE_KEY = 'todos';
 
 export const  todoAdapter = createEntityAdapter<Todo>();
 export interface TodosEntitiesState extends EntityState<Todo> {}
 
-export  interface TodosState {
-  finished: TodosEntitiesState,
-  active: TodosEntitiesState,
-  selected: Todo | null
-}
-
 export interface TodosPartialState {
-  readonly [TODOS_FEATURE_KEY]: TodosState;
+  readonly [TODOS_FEATURE_KEY]: TodoStateInterface ;
 }
 
-export const initialState: TodosState = {
+export const initialState: TodoStateInterface  = {
   finished: {
     ids: [],
     entities: {}
@@ -31,9 +25,9 @@ export const initialState: TodosState = {
 };
 
 export function reducer(
-  state: TodosState = initialState,
+  state: TodoStateInterface  = initialState,
   action: fromTodosActions.CollectiveType
-): TodosState {
+): TodoStateInterface  {
 
 
   switch (action.type) {

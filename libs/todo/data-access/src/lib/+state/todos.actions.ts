@@ -1,11 +1,8 @@
 import { Action } from '@ngrx/store';
 
-import TodoListInterface from "../../../../domain/src/lib/interfaces/todoList.interface";
-
-import { Todo}from '@todo/todo/domain'
+import { Todo, TodoStateInterface }from '@todo/todo/domain'
 
 export namespace fromTodosActions {
-
 
   export enum Types {
     AddTodo = '[Todos] Add Todo',
@@ -59,7 +56,7 @@ export namespace fromTodosActions {
   export class UpdateTodosFromDP  implements Action{
     readonly type = Types.UpdateTodosFromDP;
 
-    constructor(public payload: TodoListInterface) {}
+    constructor(public payload: TodoStateInterface) {}
   }
 
   export type CollectiveType = DeleteTodo
