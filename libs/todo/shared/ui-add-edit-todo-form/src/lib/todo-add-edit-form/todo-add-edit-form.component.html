@@ -1,14 +1,16 @@
-<form class="add-edit-form">
+<form [formGroup]="todoForm" class="add-edit-form" (ngSubmit)="handleSubmit()">
 
   <mat-form-field>
-    <input #taskDescriptionInput [value]="taskDescription" name="taskDescription" matInput placeholder="Task description">
+    <input formControlName="taskDescription" #taskDescriptionInput [value]="selectedTodo ? selectedTodo.goal : ''"
+           name="taskDescription" matInput placeholder="Task description">
   </mat-form-field>
 
   <div class="btns">
-    <button (click)="handleSubmit()" mat-fab color="accent" type="submit">
-      {{addingMode ? 'Add' : 'Edit'}}
+    <button [disabled]="!todoForm.valid" mat-fab color="accent" type="submit">
+      {{!selectedTodo ? 'Add' : 'Edit'}}
     </button>
-    <button [style.display]="addingMode ? 'none' :  'inline'" (click)="cancelTodoSelection.emit()" mat-fab color="accent" type="submit">
+    <button [style.display]="selectedTodo ? 'inline' : 'none' " (click)="cancelTodoSelection.emit()" (click)="prevDefault($event)" mat-fab
+            color="accent">
       Cancel
     </button>
   </div>

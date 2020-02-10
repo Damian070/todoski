@@ -16,10 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@todo/to-do": ["libs/to-do/src/index.ts"],
       "@todo/todos": ["libs/todos/src/index.ts"],
-      "@todo/to-dos": ["libs/to-dos/src/index.ts"],
-      "@todo/todo/to-dos": ["libs/todo/to-dos/src/index.ts"],
       "@todo/todo/domain": ["libs/todo/domain/src/index.ts"],
       "@todo/todo/data-access": ["libs/todo/data-access/src/index.ts"],
       "@todo/todo/feature": ["libs/todo/feature/src/index.ts"],
@@ -29,10 +26,6 @@
       "@todo/ui-todos-table": ["libs/ui-todos-table/src/index.ts"],
       "ui-add-edit-todo-form": ["dist/ui-add-edit-todo-form"],
       "ui-add-edit-todo-form/*": ["dist/ui-add-edit-todo-form/*"],
-      "@todo/chcfh": ["libs/chcfh/src/index.ts"],
-      "@todo/test": ["libs/test/src/index.ts"],
-      "@todo/hhj": ["libs/hhj/src/index.ts"],
-      "@todo/todo/as": ["libs/todo/as/src/index.ts"],
       "@todo/shared/ui-add-edit-todo-form": [
         "libs/shared/ui-add-edit-todo-form/src/index.ts"
       ],

@@ -1,9 +1,11 @@
 import {Injectable} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 
-import {TodosPartialState, Todo} from './todos.reducer';
+import {TodosPartialState} from './todos.reducer';
 import {todosQuery} from './todos.selectors';
 import {fromTodosActions} from './todos.actions';
+
+import {Todo} from '@todo/todo/domain'
 
 @Injectable()
 export class TodosFacade {

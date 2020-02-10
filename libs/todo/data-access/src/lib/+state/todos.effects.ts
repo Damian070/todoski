@@ -4,7 +4,7 @@ import {Store} from "@ngrx/store";
 import {map, mergeMap} from "rxjs/operators";
 
 import {TodosPartialState} from './todos.reducer';
-import {TodosActionTypes, fromTodosActions} from './todos.actions'
+import {fromTodosActions} from './todos.actions'
 import {TodosDataAccessService} from "../services/todos-data-access.service";
 
 @Injectable()
@@ -12,7 +12,7 @@ export class TodosEffects {
 
   @Effect()
   LoadFromDP$ = this.actions$.pipe(
-    ofType(TodosActionTypes.LoadTodosFromLocalStorage),
+    ofType(fromTodosActions.Types.LoadTodosFromLocalStorage),
     mergeMap(() => this.dataAccessService.loadTodosFromLocalStorage()
       .pipe(
         map(todos => new  fromTodosActions.UpdateTodosFromDP(todos))
