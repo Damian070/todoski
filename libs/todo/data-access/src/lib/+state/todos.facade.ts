@@ -33,6 +33,11 @@ export class TodosFacade {
   setTodoAsFinished(todo: Todo): void {
     this.store.dispatch(new fromTodosActions.FinishTodo(todo));
   }
+  setTodoBackToPending(todo: Todo): void {
+    this.store.dispatch(
+      new fromTodosActions.SetTodoBackToPending(todo)
+    );
+  }
 
   getPersistedTodos(): void {
     this.store.dispatch(new fromTodosActions.LoadTodosFromLocalStorage());

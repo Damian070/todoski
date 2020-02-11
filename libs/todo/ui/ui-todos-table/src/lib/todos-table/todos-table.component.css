@@ -28,20 +28,20 @@ button {
   margin-left: 0.5rem;
 }
 
-.pending-todo-buttons-wrapper {
+.todo-buttons-wrapper {
   margin-top: 0.6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.pending-todo-buttons-wrapper > .btns {
+.todo-buttons-wrapper > .todos-wrapper__buttons, .todo-buttons-wrapper > .todo-buttons-wrapper__single-btn {
   transition: 0.3s;
   opacity: 0;
   pointer-events: none;
 }
 
-.pending-todo-buttons-wrapper:hover > .btns {
+.todo-buttons-wrapper:hover > .todos-wrapper__buttons, .todo-buttons-wrapper:hover> .todo-buttons-wrapper__single-btn {
   opacity: 1;
   pointer-events: all;
 }

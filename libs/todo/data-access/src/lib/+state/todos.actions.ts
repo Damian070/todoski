@@ -10,8 +10,15 @@ export namespace fromTodosActions {
     SelectTodo = '[Todos] Select Todo',
     CancelTodoSelection = '[Todos] Cancel Todo Edit',
     FinishTodo = '[Todos] Finish Todo',
+    SetTodoBackToPending = '[Todos] Set Todo Back To Pending',
     LoadTodosFromLocalStorage = '[Todos] Load Todos From Local Storage',
     UpdateTodosFromDP = '[Todos] Update Todos From DP'
+  }
+
+  export class SetTodoBackToPending implements Action {
+    readonly type = Types.SetTodoBackToPending;
+
+    constructor(public payload: Todo) {}
   }
 
   export class FinishTodo implements Action {
@@ -66,5 +73,6 @@ export namespace fromTodosActions {
     | SelectTodo
     | FinishTodo
     | LoadTodosFromLocalStorage
-    | UpdateTodosFromDP;
+    | UpdateTodosFromDP
+    | SetTodoBackToPending;
 }

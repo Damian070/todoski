@@ -73,6 +73,16 @@ export function reducer(
       break;
     }
 
+    case fromTodosActions.Types.SetTodoBackToPending: {
+      state = {
+        ...state,
+        active: todoAdapter.addOne(action.payload, state.active),
+        finished: todoAdapter.removeOne(action.payload.id, state.finished)
+      };
+
+      break;
+    }
+
     case fromTodosActions.Types.FinishTodo: {
       const { selected } = state;
       let removeSelected: boolean = false;

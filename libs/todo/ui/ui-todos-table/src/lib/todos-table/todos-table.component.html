@@ -1,11 +1,11 @@
 <div class="todos-wrapper">
   <span class="mb"> Pending:</span>
-  <br />
+  <br/>
   <span class="todos-wrapper__no-todos-notif" *ngIf="activeTodos.length < 1">
     No active todos
   </span>
 
-  <div *ngFor="let todo of activeTodos" class="pending-todo-buttons-wrapper">
+  <div *ngFor="let todo of activeTodos" class="todo-buttons-wrapper">
     <mat-checkbox (change)="finish(todo)">
       {{ todo.goal }}
     </mat-checkbox>
@@ -21,17 +21,22 @@
   </div>
 
   <div *ngIf="!(finishedTodos.length < 1)">
-    <hr />
+    <hr/>
 
     <span class="mb">Finished:</span>
-    <br />
-    <mat-checkbox
-      class="todos-wrapper__finished-todos-list"
-      disabled="true"
-      checked="true"
-      *ngFor="let todo of finishedTodos"
-    >
-      {{ todo.goal }}
-    </mat-checkbox>
+    <br/>
+    <div class="todo-buttons-wrapper"
+         *ngFor="let todo of finishedTodos">
+      <mat-checkbox
+        class="todos-wrapper__finished-todos-list"
+        disabled="true"
+        checked="true">
+        {{ todo.goal }}
+      </mat-checkbox>
+      <button (click)="backToPending(todo)" class="todo-buttons-wrapper__single-btn" mat-raised-button color="accent">
+        Back to pending
+      </button>
+    </div>
+
   </div>
 </div>

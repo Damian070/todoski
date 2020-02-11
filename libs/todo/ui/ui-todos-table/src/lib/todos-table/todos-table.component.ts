@@ -20,16 +20,21 @@ export class TodosTableComponent {
   @Output() setTodoAsFinished: EventEmitter<Todo> = new EventEmitter();
   @Output() deleteTodo: EventEmitter<number> = new EventEmitter();
   @Output() selectForEdition: EventEmitter<Todo> = new EventEmitter();
+  @Output() setTodoBackToPending: EventEmitter<Todo> = new EventEmitter();
 
-  finish(e): void {
+  finish(e: Todo): void {
     this.setTodoAsFinished.emit(e);
   }
 
-  delete(e): void {
-    this.deleteTodo.emit(e);
+  backToPending(e: Todo): void {
+    confirm('Are you sure?') && this.setTodoBackToPending.emit(e);
   }
 
-  select(e): void {
+  delete(e: number): void {
+    confirm('Are you sure?') && this.deleteTodo.emit(e);
+  }
+
+  select(e: Todo): void {
     this.selectForEdition.emit(e);
   }
 }

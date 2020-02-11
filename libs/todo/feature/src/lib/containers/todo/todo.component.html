@@ -9,6 +9,7 @@
     (setTodoAsFinished)="onSetTodoAsFinished($event)"
     (deleteTodo)="onDeleteTodo($event)"
     (selectForEdition)="onSelectTodo($event)"
+    (setTodoBackToPending)="onSetTodoBackToPending($event)"
     [activeTodos]="activeTodos$ | async"
     [finishedTodos]="finishedTodos$ | async"
   ></todo-todos-table>
