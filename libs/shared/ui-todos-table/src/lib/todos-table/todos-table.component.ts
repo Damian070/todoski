@@ -1,5 +1,5 @@
 import {Component, ChangeDetectionStrategy, Input, Output, EventEmitter} from '@angular/core';
-import {Todo} from "../../../../../domain/src/lib/interfaces/todo.interface";
+import {Todo} from "../../../../../todo/domain/src/lib/interfaces/todo.interface";
 
 @Component({
   selector: 'todo-todos-table',
