@@ -1,0 +1,24 @@
+<form [formGroup]="todoForm" class="todo-form" (ngSubmit)="handleSubmit()">
+  <mat-form-field>
+    <input
+      formControlName="taskDescription"
+      name="taskDescription"
+      matInput
+      placeholder="Task description"
+    />
+  </mat-form-field>
+
+  <div class="todo-form__buttons-wrapper">
+    <button [disabled]="!todoForm.valid" mat-fab color="accent" type="submit">
+      {{ !editedTodoValue ? 'Add' : 'Edit' }}
+    </button>
+    <button
+      [style.display]="editedTodoValue ? 'inline' : 'none'"
+      (click)="prevDefault($event); cancelTodoSelectionLocal()"
+      mat-fab
+      color="accent"
+    >
+      Cancel
+    </button>
+  </div>
+</form>

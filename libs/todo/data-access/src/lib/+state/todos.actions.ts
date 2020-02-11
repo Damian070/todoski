@@ -1,22 +1,21 @@
 import { Action } from '@ngrx/store';
 
-import { Todo, TodoStateInterface }from '@todo/todo/domain'
+import { Todo, TodoStateInterface } from '@todo/todo/domain';
 
 export namespace fromTodosActions {
-
   export enum Types {
     AddTodo = '[Todos] Add Todo',
     DeleteTodo = '[Todos] Delete Todo',
     EditTodo = '[Todos] Edit Todo',
     SelectTodo = '[Todos] Select Todo',
-    CancelTodoSelection= '[Todos] Cancel Todo Edit',
+    CancelTodoSelection = '[Todos] Cancel Todo Edit',
     FinishTodo = '[Todos] Finish Todo',
     LoadTodosFromLocalStorage = '[Todos] Load Todos From Local Storage',
     UpdateTodosFromDP = '[Todos] Update Todos From DP'
   }
 
-  export class FinishTodo implements  Action {
-    readonly  type = Types.FinishTodo;
+  export class FinishTodo implements Action {
+    readonly type = Types.FinishTodo;
 
     constructor(public payload: Todo) {}
   }
@@ -24,42 +23,43 @@ export namespace fromTodosActions {
   export class AddTodo implements Action {
     readonly type = Types.AddTodo;
 
-    constructor(public  payload: Todo) {}
+    constructor(public payload: Todo) {}
   }
 
   export class DeleteTodo implements Action {
     readonly type = Types.DeleteTodo;
 
-    constructor(public  payload: number) {}
+    constructor(public payload: number) {}
   }
 
   export class EditTodo implements Action {
-    readonly  type = Types.EditTodo;
+    readonly type = Types.EditTodo;
 
-    constructor(public  payload: Partial<Todo>) {}
+    constructor(public payload: Partial<Todo>) {}
   }
 
   export class SelectTodo implements Action {
-    readonly  type = Types.SelectTodo;
+    readonly type = Types.SelectTodo;
 
-    constructor(public  payload: Todo) {}
+    constructor(public payload: Todo) {}
   }
 
-  export class CancelTodoSelection implements Action{
+  export class CancelTodoSelection implements Action {
     readonly type = Types.CancelTodoSelection;
   }
 
-  export class LoadTodosFromLocalStorage  implements Action{
+  export class LoadTodosFromLocalStorage implements Action {
     readonly type = Types.LoadTodosFromLocalStorage;
   }
 
-  export class UpdateTodosFromDP  implements Action{
+  export class UpdateTodosFromDP implements Action {
     readonly type = Types.UpdateTodosFromDP;
 
     constructor(public payload: TodoStateInterface) {}
   }
 
-  export type CollectiveType = DeleteTodo
+  export type CollectiveType =
+    | DeleteTodo
     | EditTodo
     | AddTodo
     | CancelTodoSelection

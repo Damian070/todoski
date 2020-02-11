@@ -5,9 +5,9 @@ import {
   Input,
   Output
 } from '@angular/core';
-import {FormBuilder, Validators} from "@angular/forms";
+import { FormBuilder, Validators } from '@angular/forms';
 
-import {Todo} from "@todo/todo/domain";
+import { Todo } from '@todo/todo/domain';
 
 @Component({
   selector: 'todo-add-edit-form',
@@ -18,8 +18,13 @@ import {Todo} from "@todo/todo/domain";
 
 export class TodoAddEditFormComponent {
   todoForm;
+  editedTodoValue: Todo | null;
 
-  @Input() selectedTodo: Todo | null ;
+  @Input()
+  set selectedTodo(value: Todo | null) {
+    this.editedTodoValue=  value;
+    this.todoForm.controls.taskDescription.setValue( value && value.goal || '');
+  }
 
   @Output() addTodo: EventEmitter<Todo> = new EventEmitter();
   @Output() cancelTodoSelection: EventEmitter<void> = new EventEmitter();
@@ -31,18 +36,24 @@ export class TodoAddEditFormComponent {
     });
   }
 
+  cancelTodoSelectionLocal() {
+    this.cancelTodoSelection.emit();
+  }
+
   prevDefault(e) {
     e.preventDefault();
   }
 
-  add(e):void {
+  add(e): void {
     const id = Date.now();
-    this.addTodo.emit({id, goal: e});
+    this.addTodo.emit({ id, goal: e });
   }
 
-  handleSubmit():void {
-    const  { value } = this.todoForm.controls.taskDescription;
+  handleSubmit(): void {
+    const { value } = this.todoForm.controls.taskDescription;
 
-    !this.selectedTodo ?  value.length > 0 && this.add(value) : this.editTodo.emit({goal: value, id: this.selectedTodo.id});
+    !this.editedTodoValue
+      ? value.length > 0 && this.add(value)
+      : this.editTodo.emit({ goal: value, id: this.editedTodoValue.id });
   }
 }

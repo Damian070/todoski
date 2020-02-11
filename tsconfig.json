@@ -22,25 +22,7 @@
       "@todo/todo/feature": ["libs/todo/feature/src/index.ts"],
       "@todo/todo/shell": ["libs/todo/shell/src/index.ts"],
       "@todo/domain": ["libs/domain/src/index.ts"],
-      "@todo/ui-header": ["libs/ui-header/src/index.ts"],
-      "@todo/ui-todos-table": ["libs/ui-todos-table/src/index.ts"],
-      "ui-add-edit-todo-form": ["dist/ui-add-edit-todo-form"],
-      "ui-add-edit-todo-form/*": ["dist/ui-add-edit-todo-form/*"],
-      "@todo/shared/ui-add-edit-todo-form": [
-        "libs/shared/ui-add-edit-todo-form/src/index.ts"
-      ],
-      "@todo/todo/shared/ui-add-edit-todo-form": [
-        "libs/todo/shared/ui-add-edit-todo-form/src/index.ts"
-      ],
-      "@todo/ui-todo-table-form-wrapper": [
-        "libs/ui-todo-table-form-wrapper/src/index.ts"
-      ],
-      "@todo/libs/todo/shared/ui-todo-table-form-wrapper": [
-        "libs/libs/todo/shared/ui-todo-table-form-wrapper/src/index.ts"
-      ],
-      "@todo/todo/shared/ui-todo-table-form-wrapper": [
-        "libs/todo/shared/ui-todo-table-form-wrapper/src/index.ts"
-      ]
+      "@todo/todo/ui": ["libs/todo/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

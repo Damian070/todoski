@@ -1,6 +1,6 @@
-import {NgModule} from "@angular/core";
-import {RouterModule, Routes} from "@angular/router";
-import {TodoContainerComponent} from "./containers/todo-container/todo-container.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { TodoContainerComponent } from './containers/todo-container/todo-container.component';
 
 const routes: Routes = [
   {
@@ -9,9 +9,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import("@todo/todo/feature").then(
-          m => m.TodoFeatureModule
-        )
+        loadChildren: () =>
+          import('@todo/todo/feature').then(m => m.TodoFeatureModule)
       }
     ]
   }
@@ -21,5 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-
-export class ShellRoutingModule {};
+export class ShellRoutingModule {}

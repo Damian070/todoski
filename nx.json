@@ -39,28 +39,7 @@
     "ui-todos-table": {
       "tags": []
     },
-    "test": {
-      "tags": []
-    },
-    "hhj": {
-      "tags": []
-    },
-    "todo-as": {
-      "tags": []
-    },
-    "shared-ui-add-edit-todo-form": {
-      "tags": []
-    },
-    "todo-shared-ui-add-edit-todo-form": {
-      "tags": []
-    },
-    "ui-todo-table-form-wrapper": {
-      "tags": []
-    },
-    "libs-todo-shared-ui-todo-table-form-wrapper": {
-      "tags": []
-    },
-    "todo-shared-ui-todo-table-form-wrapper": {
+    "todo-ui": {
       "tags": []
     }
   }

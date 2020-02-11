@@ -1,4 +1,4 @@
 export interface Todo {
-  id: number,
-  goal: string
+  id: number;
+  goal: string;
 }

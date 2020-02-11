@@ -14,34 +14,34 @@ ul {
   padding-inline-start: 1.6rem;
 }
 
-.noActiveInfo {
+.todos-wrapper__no-todos-notif {
   font-size: 1rem;
 }
 
- .finished {
-   text-decoration: line-through;
-   display: block;
- }
+.todos-wrapper__finished-todos-list{
+  text-decoration: line-through;
+  display: block;
+}
 
 button {
   float: right;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 .pending-todo-buttons-wrapper {
   margin-top: 0.6rem;
-  display : flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .pending-todo-buttons-wrapper > .btns {
-  transition: .3s;
+  transition: 0.3s;
   opacity: 0;
   pointer-events: none;
 }
 
-.pending-todo-buttons-wrapper:hover  > .btns{
+.pending-todo-buttons-wrapper:hover > .btns {
   opacity: 1;
   pointer-events: all;
 }

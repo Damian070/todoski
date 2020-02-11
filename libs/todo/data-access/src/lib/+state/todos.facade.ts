@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
-import {select, Store} from '@ngrx/store';
+import { Injectable } from '@angular/core';
+import { select, Store } from '@ngrx/store';
 
-import {TodosPartialState} from './todos.reducer';
-import {todosQuery} from './todos.selectors';
-import {fromTodosActions} from './todos.actions';
+import { TodosPartialState } from './todos.reducer';
+import { todosQuery } from './todos.selectors';
+import { fromTodosActions } from './todos.actions';
 
-import {Todo} from '@todo/todo/domain'
+import { Todo } from '@todo/todo/domain';
 
 @Injectable()
 export class TodosFacade {
@@ -15,29 +15,26 @@ export class TodosFacade {
 
   constructor(private store: Store<TodosPartialState>) {}
 
-  addTodo(todo: Todo):void {
+  addTodo(todo: Todo): void {
     this.store.dispatch(new fromTodosActions.AddTodo(todo));
   }
-  editTodo(todo: Partial<Todo>):void {
+  editTodo(todo: Partial<Todo>): void {
     this.store.dispatch(new fromTodosActions.EditTodo(todo));
   }
-  deleteTodo(id: number):void {
+  deleteTodo(id: number): void {
     this.store.dispatch(new fromTodosActions.DeleteTodo(id));
   }
-  selectTodo(todo: Todo):void {
+  selectTodo(todo: Todo): void {
     this.store.dispatch(new fromTodosActions.SelectTodo(todo));
   }
-  cancelTodoSelection():void {
+  cancelTodoSelection(): void {
     this.store.dispatch(new fromTodosActions.CancelTodoSelection());
   }
-  setTodoAsFinished(todo: Todo):void {
+  setTodoAsFinished(todo: Todo): void {
     this.store.dispatch(new fromTodosActions.FinishTodo(todo));
   }
 
-  getPersistedTodos():void {
-    this.store.dispatch(
-      new fromTodosActions.LoadTodosFromLocalStorage()
-    )
+  getPersistedTodos(): void {
+    this.store.dispatch(new fromTodosActions.LoadTodosFromLocalStorage());
   }
-
 }

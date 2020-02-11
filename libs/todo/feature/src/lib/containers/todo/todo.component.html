@@ -1,11 +1,15 @@
 <div class="container">
-  <todo-add-edit-form (cancelTodoSelection)="cancelTodoSelection()"
-    (editTodo)="editTodo($event)"
-    (addTodo)="addTodo($event)"
-    [selectedTodo]="selectedTodo$ | async"></todo-add-edit-form>
-  <todo-todos-table (setTodoAsFinished)="setTodoAsFinished($event)"
-      (deleteTodo)="deleteTodo($event)"
-      (selectForEdition)="selectTodo($event)"
-      [activeTodos]="activeTodos$ | async"
-      [finishedTodos]="finishedTodos$ | async"></todo-todos-table>
+  <todo-add-edit-form
+    (cancelTodoSelection)="onCancelTodoSelection()"
+    (editTodo)="onEditTodo($event)"
+    (addTodo)="onAddTodo($event)"
+    [selectedTodo]="selectedTodo$ | async"
+  ></todo-add-edit-form>
+  <todo-todos-table
+    (setTodoAsFinished)="onSetTodoAsFinished($event)"
+    (deleteTodo)="onDeleteTodo($event)"
+    (selectForEdition)="onSelectTodo($event)"
+    [activeTodos]="activeTodos$ | async"
+    [finishedTodos]="finishedTodos$ | async"
+  ></todo-todos-table>
 </div>

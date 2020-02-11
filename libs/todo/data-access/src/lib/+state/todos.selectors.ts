@@ -1,22 +1,24 @@
-import {createFeatureSelector, createSelector} from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { TODOS_FEATURE_KEY, selectArray } from './todos.reducer';
-import { TodoStateInterface }from '@todo/todo/domain'
+import { TodoStateInterface } from '@todo/todo/domain';
 
-const getTodosState = createFeatureSelector<TodoStateInterface >(TODOS_FEATURE_KEY);
+const getTodosState = createFeatureSelector<TodoStateInterface>(
+  TODOS_FEATURE_KEY
+);
 
 const getActive = createSelector(
   getTodosState,
-  (state: TodoStateInterface ) => state.active
+  (state: TodoStateInterface) => state.active
 );
 
 const getFinished = createSelector(
   getTodosState,
-  (state: TodoStateInterface ) => state.finished
+  (state: TodoStateInterface) => state.finished
 );
 
 const getSelected = createSelector(
   getTodosState,
-  (state: TodoStateInterface ) => state.selected
+  (state: TodoStateInterface) => state.selected
 );
 
 const getActiveArray = createSelector(

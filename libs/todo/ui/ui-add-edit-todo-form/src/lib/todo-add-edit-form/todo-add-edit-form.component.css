@@ -1,0 +1,11 @@
+.todo-form {
+  display: flex;
+}
+
+.todo-form__buttons-wrapper {
+  display: flex;
+}
+
+.todo-form__buttons-wrapper > button {
+  margin-left: 0.5rem;
+}

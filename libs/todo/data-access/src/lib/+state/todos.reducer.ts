@@ -1,18 +1,18 @@
-import {fromTodosActions} from './todos.actions';
-import {EntityState, createEntityAdapter} from '@ngrx/entity'
+import { fromTodosActions } from './todos.actions';
+import { EntityState, createEntityAdapter } from '@ngrx/entity';
 
-import { Todo, TodoStateInterface }from '@todo/todo/domain'
+import { Todo, TodoStateInterface } from '@todo/todo/domain';
 
 export const TODOS_FEATURE_KEY = 'todos';
 
-export const  todoAdapter = createEntityAdapter<Todo>();
+export const todoAdapter = createEntityAdapter<Todo>();
 export interface TodosEntitiesState extends EntityState<Todo> {}
 
 export interface TodosPartialState {
-  readonly [TODOS_FEATURE_KEY]: TodoStateInterface ;
+  readonly [TODOS_FEATURE_KEY]: TodoStateInterface;
 }
 
-export const initialState: TodoStateInterface  = {
+export const initialState: TodoStateInterface = {
   finished: {
     ids: [],
     entities: {}
@@ -25,29 +25,30 @@ export const initialState: TodoStateInterface  = {
 };
 
 export function reducer(
-  state: TodoStateInterface  = initialState,
+  state: TodoStateInterface = initialState,
   action: fromTodosActions.CollectiveType
-): TodoStateInterface  {
-
-
+): TodoStateInterface {
   switch (action.type) {
-
     case fromTodosActions.Types.DeleteTodo: {
-
       state = {
         ...state,
         active: todoAdapter.removeOne(action.payload, state.active),
-        selected: state.selected && state.selected.id === action.payload ? null : state.selected
+        selected:
+          state.selected && state.selected.id === action.payload
+            ? null
+            : state.selected
       };
 
       break;
     }
 
     case fromTodosActions.Types.EditTodo: {
-
       state = {
         ...state,
-        active: todoAdapter.updateOne({ id: action.payload.id, changes: action.payload } , state.active),
+        active: todoAdapter.updateOne(
+          { id: action.payload.id, changes: action.payload },
+          state.active
+        ),
         selected: null
       };
 
@@ -55,7 +56,6 @@ export function reducer(
     }
 
     case fromTodosActions.Types.CancelTodoSelection: {
-
       state = {
         ...state,
         selected: null
@@ -65,7 +65,6 @@ export function reducer(
     }
 
     case fromTodosActions.Types.SelectTodo: {
-
       state = {
         ...state,
         selected: action.payload
@@ -75,9 +74,9 @@ export function reducer(
     }
 
     case fromTodosActions.Types.FinishTodo: {
-      const {selected} = state;
-      let removeSelected:boolean = false;
-      if(selected && selected ===action.payload) removeSelected = true;
+      const { selected } = state;
+      let removeSelected: boolean = false;
+      if (selected && selected === action.payload) removeSelected = true;
 
       state = {
         ...state,
@@ -90,7 +89,6 @@ export function reducer(
     }
 
     case fromTodosActions.Types.AddTodo: {
-
       state = {
         ...state,
         active: todoAdapter.addOne(action.payload, state.active)
@@ -100,18 +98,14 @@ export function reducer(
     }
 
     case fromTodosActions.Types.UpdateTodosFromDP: {
-
       state = action.payload || initialState;
 
       break;
     }
-
   }
   return state;
 }
 
-const {
-  selectAll
-} = todoAdapter.getSelectors();
+const { selectAll } = todoAdapter.getSelectors();
 
 export const selectArray = selectAll;
