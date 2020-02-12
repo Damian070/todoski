@@ -33,16 +33,19 @@
     "domain": {
       "tags": []
     },
-    "ui-header": {
+    "shared-ui-header": {
       "tags": []
     },
-    "ui-todos-table": {
+    "todo-ui-ui-todos-table": {
+      "tags": []
+    },
+    "todo-ui-ui-add-edit-form": {
       "tags": []
     },
     "todo-ui": {
       "tags": []
     },
-    "todo-ui-ui-dialog": {
+    "shared-ui-dialog": {
       "tags": []
     }
   }
