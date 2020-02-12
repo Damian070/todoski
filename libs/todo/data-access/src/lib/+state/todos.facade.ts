@@ -34,9 +34,7 @@ export class TodosFacade {
     this.store.dispatch(new fromTodosActions.FinishTodo(todo));
   }
   setTodoBackToPending(todo: Todo): void {
-    this.store.dispatch(
-      new fromTodosActions.SetTodoBackToPending(todo)
-    );
+    this.store.dispatch(new fromTodosActions.SetTodoBackToPending(todo));
   }
 
   getPersistedTodos(): void {

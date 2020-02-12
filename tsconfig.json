@@ -22,8 +22,12 @@
       "@todo/todo/shell": ["libs/todo/shell/src/index.ts"],
       "@todo/shared/ui-header": ["libs/shared/ui-header/src/index.ts"],
       "@todo/shared/ui-dialog": ["libs/shared/ui-dialog/src/index.ts"],
-      "@todo/todo/ui/ui-todos-table": ["libs/todo/ui/ui-todos-table/src/index.ts"],
-      "@todo/todo/ui/ui-add-edit-form": ["libs/todo/ui-add-edit-form/src/index.ts"]
+      "@todo/todo/ui/ui-todos-table": [
+        "libs/todo/ui/ui-todos-table/src/index.ts"
+      ],
+      "@todo/todo/ui/ui-add-edit-form": [
+        "libs/todo/ui-add-edit-form/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

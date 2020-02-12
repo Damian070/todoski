@@ -1,6 +1,6 @@
 <div class="todos-wrapper">
   <span class="mb"> Pending:</span>
-  <br/>
+  <br />
   <span class="todos-wrapper__no-todos-notif" *ngIf="activeTodos.length < 1">
     No active todos
   </span>
@@ -13,7 +13,9 @@
     <div class="todos-wrapper__buttons">
       <button
         (click)="confirmAction(true, todo)"
-              mat-raised-button color="accent">
+        mat-raised-button
+        color="accent"
+      >
         Delete
       </button>
       <button (click)="select(todo)" mat-raised-button color="accent">
@@ -23,24 +25,26 @@
   </div>
 
   <div *ngIf="!(finishedTodos.length < 1)">
-    <hr/>
+    <hr />
 
     <span class="mb">Finished:</span>
-    <br/>
-    <div class="todo-buttons-wrapper"
-         *ngFor="let todo of finishedTodos">
+    <br />
+    <div class="todo-buttons-wrapper" *ngFor="let todo of finishedTodos">
       <mat-checkbox
         class="todos-wrapper__finished-todos-list"
         disabled="true"
-        checked="true">
+        checked="true"
+      >
         {{ todo.goal }}
       </mat-checkbox>
       <button
-          (click)="confirmAction(false, todo)"
-          class="todo-buttons-wrapper__single-btn" mat-raised-button color="accent">
+        (click)="confirmAction(false, todo)"
+        class="todo-buttons-wrapper__single-btn"
+        mat-raised-button
+        color="accent"
+      >
         Back to pending
       </button>
     </div>
-
   </div>
 </div>

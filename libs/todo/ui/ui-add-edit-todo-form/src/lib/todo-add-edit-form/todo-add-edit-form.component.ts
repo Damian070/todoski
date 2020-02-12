@@ -15,15 +15,16 @@ import { Todo } from '@todo/todo/domain';
   styleUrls: ['./todo-add-edit-form.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-
 export class TodoAddEditFormComponent {
   todoForm;
   editedTodoValue: Todo | null;
 
   @Input()
   set selectedTodo(value: Todo | null) {
-    this.editedTodoValue=  value;
-    this.todoForm.controls.taskDescription.setValue( value && value.goal || '');
+    this.editedTodoValue = value;
+    this.todoForm.controls.taskDescription.setValue(
+      (value && value.goal) || ''
+    );
   }
 
   @Output() addTodo: EventEmitter<Todo> = new EventEmitter();
@@ -36,7 +37,7 @@ export class TodoAddEditFormComponent {
     });
   }
 
-  cancelTodoSelectionLocal():void {
+  cancelTodoSelectionLocal(): void {
     this.cancelTodoSelection.emit();
   }
 

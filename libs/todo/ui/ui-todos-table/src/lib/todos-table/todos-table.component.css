@@ -18,7 +18,7 @@ ul {
   font-size: 1rem;
 }
 
-.todos-wrapper__finished-todos-list{
+.todos-wrapper__finished-todos-list {
   text-decoration: line-through;
   display: block;
 }
@@ -35,13 +35,15 @@ button {
   align-items: center;
 }
 
-.todo-buttons-wrapper > .todos-wrapper__buttons, .todo-buttons-wrapper > .todo-buttons-wrapper__single-btn {
+.todo-buttons-wrapper > .todos-wrapper__buttons,
+.todo-buttons-wrapper > .todo-buttons-wrapper__single-btn {
   transition: 0.3s;
   opacity: 0;
   pointer-events: none;
 }
 
-.todo-buttons-wrapper:hover > .todos-wrapper__buttons, .todo-buttons-wrapper:hover> .todo-buttons-wrapper__single-btn {
+.todo-buttons-wrapper:hover > .todos-wrapper__buttons,
+.todo-buttons-wrapper:hover > .todo-buttons-wrapper__single-btn {
   opacity: 1;
   pointer-events: all;
 }

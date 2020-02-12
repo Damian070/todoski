@@ -271,31 +271,31 @@
       "root": "libs/todo/ui/ui-todos-table",
       "sourceRoot": "libs/todo/ui/ui-todos-table/src",
       "projectType": "library",
-    "ui-header": {
-      "root": "libs/todo/ui/ui-header",
-      "sourceRoot": "libs/todo/ui/ui-header/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ui-header/tsconfig.lib.json",
-              "libs/ui-header/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/ui-header/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ui-header/jest.config.js",
-            "tsConfig": "libs/ui-header/tsconfig.spec.json"
+      "ui-header": {
+        "root": "libs/todo/ui/ui-header",
+        "sourceRoot": "libs/todo/ui/ui-header/src",
+        "projectType": "library",
+        "schematics": {},
+        "architect": {
+          "lint": {
+            "builder": "@angular-devkit/build-angular:tslint",
+            "options": {
+              "tsConfig": [
+                "libs/ui-header/tsconfig.lib.json",
+                "libs/ui-header/tsconfig.spec.json"
+              ],
+              "exclude": ["**/node_modules/**", "!libs/ui-header/**"]
+            }
+          },
+          "test": {
+            "builder": "@nrwl/jest:jest",
+            "options": {
+              "jestConfig": "libs/ui-header/jest.config.js",
+              "tsConfig": "libs/ui-header/tsconfig.spec.json"
+            }
           }
         }
-      }
-    },
+      },
       "schematics": {},
       "architect": {
         "lint": {

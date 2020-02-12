@@ -8,9 +8,8 @@ describe('UiDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UiDialogComponent ]
-    })
-    .compileComponents();
+      declarations: [UiDialogComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -5,10 +5,10 @@ import {
   Output,
   EventEmitter
 } from '@angular/core';
-import {Todo} from '../../../../../domain/src/lib/interfaces/todo.interface';
-import {MatDialog} from "@angular/material/dialog";
-import {UiDialogComponent} from "../../../../../../shared/ui-dialog/src/lib/ui-dialog/ui-dialog.component";
-import {filter} from "rxjs/operators";
+import { Todo } from '../../../../../domain/src/lib/interfaces/todo.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { UiDialogComponent } from '../../../../../../shared/ui-dialog/src/lib/ui-dialog/ui-dialog.component';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'todo-todos-table',
@@ -25,15 +25,19 @@ export class TodosTableComponent {
   @Output() selectForEdition: EventEmitter<Todo> = new EventEmitter();
   @Output() setTodoBackToPending: EventEmitter<Todo> = new EventEmitter();
 
-  constructor(private dialog: MatDialog) {
-  }
+  constructor(private dialog: MatDialog) {}
 
   confirmAction(deleteFlag: boolean, todo: Todo): void {
     const dialogRef = this.dialog.open(UiDialogComponent);
 
-    dialogRef.afterClosed().pipe(
-      filter(res => !!res)
-    ).subscribe( res => deleteFlag ? this.deleteTodo.emit(todo.id) : this.setTodoBackToPending.emit(todo));
+    dialogRef
+      .afterClosed()
+      .pipe(filter(res => !!res))
+      .subscribe(res =>
+        deleteFlag
+          ? this.deleteTodo.emit(todo.id)
+          : this.setTodoBackToPending.emit(todo)
+      );
   }
 
   finish(e: Todo): void {

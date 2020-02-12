@@ -37,7 +37,7 @@ export class TodoComponent implements OnInit {
     this.facade.setTodoAsFinished(todo);
   }
   onSetTodoBackToPending(todo: Todo): void {
-    this.facade.setTodoBackToPending(todo)
+    this.facade.setTodoBackToPending(todo);
   }
 
   ngOnInit(): void {
