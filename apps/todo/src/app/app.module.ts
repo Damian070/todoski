@@ -41,7 +41,6 @@ import {UiDialogComponent} from "../../../../libs/todo/ui/ui-dialog/src/lib/ui-d
     })
   ],
   entryComponents: [UiDialogComponent],
-  providers: [{ provide: MatDialogRef, useValue: {} }, { provide: MAT_DIALOG_DATA, useValue: [] }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

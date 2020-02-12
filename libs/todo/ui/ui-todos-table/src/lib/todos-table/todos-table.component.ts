@@ -16,8 +16,6 @@ import {UiDialogComponent} from "../../../../ui-dialog/src/lib/ui-dialog/ui-dial
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodosTableComponent {
-  todoToPerformActionOn: Todo;
-  deleteFlag: boolean;
   @Input() activeTodos: Todo[];
   @Input() finishedTodos: Todo[];
 
@@ -29,24 +27,16 @@ export class TodosTableComponent {
   constructor(public dialog: MatDialog) {
   }
 
-  openDialog(): void {
+  openDialog(deleteFlag: boolean, todo: Todo): void {
     const dialogRef = this.dialog.open(UiDialogComponent);
 
     dialogRef.afterClosed().subscribe(res => {
-      if(res) this.deleteFlag ? this.deleteTodo.emit(this.todoToPerformActionOn.id) : this.setTodoBackToPending.emit(this.todoToPerformActionOn);
+      if(res) deleteFlag ? this.deleteTodo.emit(todo.id) : this.setTodoBackToPending.emit(todo);
     });
   }
 
   finish(e: Todo): void {
     this.setTodoAsFinished.emit(e);
-  }
-
-  backToPending(e: Todo): void {
-    confirm('Are you sure?') && this.setTodoBackToPending.emit(e);
-  }
-
-  delete(e: number): void {
-    confirm('Are you sure?') && this.deleteTodo.emit(e);
   }
 
   select(e: Todo): void {
