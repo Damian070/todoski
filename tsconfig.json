@@ -23,7 +23,7 @@
       "@todo/todo/shell": ["libs/todo/shell/src/index.ts"],
       "@todo/domain": ["libs/domain/src/index.ts"],
       "@todo/todo/ui": ["libs/todo/ui/src/index.ts"],
-      "@todo/todo/ui/ui-dialog": ["libs/todo/ui/ui-dialog/src/index.ts"]
+      "@todo/shared/ui-dialog": ["libs/shared/ui-dialog/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -12,7 +12,7 @@
 
     <div class="todos-wrapper__buttons">
       <button
-        (click)="openDialog(true, todo)"
+        (click)="confirmAction(true, todo)"
               mat-raised-button color="accent">
         Delete
       </button>
@@ -36,7 +36,7 @@
         {{ todo.goal }}
       </mat-checkbox>
       <button
-          (click)="openDialog(false, todo)"
+          (click)="confirmAction(false, todo)"
           class="todo-buttons-wrapper__single-btn" mat-raised-button color="accent">
         Back to pending
       </button>

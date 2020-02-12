@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoShellModule } from '@todo/todo/shell';
 import { AppRoutingModule } from './app-routing.module';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {UiDialogComponent} from "../../../../libs/todo/ui/ui-dialog/src/lib/ui-dialog/ui-dialog.component";
+import {UiDialogComponent} from "../../../../libs/shared/ui-dialog/src/lib/ui-dialog/ui-dialog.component";
 
 @NgModule({
   declarations: [AppComponent],

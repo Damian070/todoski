@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import {Todo} from '../../../../../domain/src/lib/interfaces/todo.interface';
 import {MatDialog} from "@angular/material/dialog";
-import {UiDialogComponent} from "../../../../ui-dialog/src/lib/ui-dialog/ui-dialog.component";
+import {UiDialogComponent} from "../../../../../../shared/ui-dialog/src/lib/ui-dialog/ui-dialog.component";
 
 @Component({
   selector: 'todo-todos-table',
@@ -27,7 +27,7 @@ export class TodosTableComponent {
   constructor(public dialog: MatDialog) {
   }
 
-  openDialog(deleteFlag: boolean, todo: Todo): void {
+  confirmAction(deleteFlag: boolean, todo: Todo): void {
     const dialogRef = this.dialog.open(UiDialogComponent);
 
     dialogRef.afterClosed().subscribe(res => {
