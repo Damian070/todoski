@@ -11,7 +11,9 @@
     </mat-checkbox>
 
     <div class="todos-wrapper__buttons">
-      <button (click)="delete(todo.id)" mat-raised-button color="accent">
+      <button
+        (click)="todoToPerformActionOn=todo; deleteFlag = true; openDialog()"
+              mat-raised-button color="accent">
         Delete
       </button>
       <button (click)="select(todo)" mat-raised-button color="accent">
@@ -33,7 +35,9 @@
         checked="true">
         {{ todo.goal }}
       </mat-checkbox>
-      <button (click)="backToPending(todo)" class="todo-buttons-wrapper__single-btn" mat-raised-button color="accent">
+      <button
+          (click)="todoToPerformActionOn=todo; deleteFlag = false; openDialog()"
+          class="todo-buttons-wrapper__single-btn" mat-raised-button color="accent">
         Back to pending
       </button>
     </div>

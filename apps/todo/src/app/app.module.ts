@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoShellModule } from '@todo/todo/shell';
 import { AppRoutingModule } from './app-routing.module';
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {UiDialogComponent} from "../../../../libs/todo/ui/ui-dialog/src/lib/ui-dialog/ui-dialog.component";
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,7 +40,8 @@ import { AppRoutingModule } from './app-routing.module';
       logOnly: environment.production // Restrict extension to log-only mode
     })
   ],
-  providers: [],
+  entryComponents: [UiDialogComponent],
+  providers: [{ provide: MatDialogRef, useValue: {} }, { provide: MAT_DIALOG_DATA, useValue: [] }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

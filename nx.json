@@ -41,6 +41,9 @@
     },
     "todo-ui": {
       "tags": []
+    },
+    "todo-ui-ui-dialog": {
+      "tags": []
     }
   }
 }

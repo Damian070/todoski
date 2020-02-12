@@ -614,6 +614,31 @@
           }
         }
       }
+    },
+    "todo-ui-ui-dialog": {
+      "root": "libs/todo/ui/ui-dialog",
+      "sourceRoot": "libs/todo/ui/ui-dialog/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/todo/ui/ui-dialog/tsconfig.lib.json",
+              "libs/todo/ui/ui-dialog/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/todo/ui/ui-dialog/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/todo/ui/ui-dialog/jest.config.js",
+            "tsConfig": "libs/todo/ui/ui-dialog/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {
