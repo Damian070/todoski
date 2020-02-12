@@ -36,15 +36,11 @@ export class TodoAddEditFormComponent {
     });
   }
 
-  cancelTodoSelectionLocal() {
+  cancelTodoSelectionLocal():void {
     this.cancelTodoSelection.emit();
   }
 
-  prevDefault(e) {
-    e.preventDefault();
-  }
-
-  add(e): void {
+  add(e: string): void {
     const id = Date.now();
     this.addTodo.emit({ id, goal: e });
   }

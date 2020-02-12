@@ -217,9 +217,9 @@
         }
       }
     },
-    "domain": {
-      "root": "libs/domain",
-      "sourceRoot": "libs/domain/src",
+    "todo-domain": {
+      "root": "libs/todo/domain",
+      "sourceRoot": "libs/todo/domain/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -227,8 +227,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/domain/tsconfig.lib.json",
-              "libs/domain/tsconfig.spec.json"
+              "libs/todo/domain/tsconfig.lib.json",
+              "libs/todo/domain/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**", "!libs/domain/**"]
           }
@@ -236,8 +236,8 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/domain/jest.config.js",
-            "tsConfig": "libs/domain/tsconfig.spec.json"
+            "jestConfig": "libs/todo/domain/jest.config.js",
+            "tsConfig": "libs/todo/domain/tsconfig.spec.json"
           }
         }
       }

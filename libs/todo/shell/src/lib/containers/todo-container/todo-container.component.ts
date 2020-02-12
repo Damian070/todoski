@@ -10,7 +10,7 @@ import { TodosPartialState } from '@todo/todo/data-access';
   templateUrl: './todo-container.component.html',
   styleUrls: ['./todo-container.component.css']
 })
-export class TodoContainerComponent implements OnInit {
+export class TodoContainerComponent {
   @HostListener('window:unload', ['$event'])
   unloadHandler(event): void {
     this.saveToDP();
@@ -36,6 +36,4 @@ export class TodoContainerComponent implements OnInit {
     private dataAccessService: TodosDataAccessService,
     private store$: Store<TodosPartialState>
   ) {}
-
-  ngOnInit() {}
 }

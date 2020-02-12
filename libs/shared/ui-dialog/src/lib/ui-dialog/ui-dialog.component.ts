@@ -6,13 +6,6 @@ import {MatDialogRef} from "@angular/material/dialog";
   templateUrl: './ui-dialog.component.html',
   styleUrls: ['./ui-dialog.component.css']
 })
-export class UiDialogComponent implements OnInit {
-
-  constructor(
-    public dialogRef: MatDialogRef<UiDialogComponent>
-  ) { }
-
-  ngOnInit() {
-  }
+export class UiDialogComponent  {
 
 }

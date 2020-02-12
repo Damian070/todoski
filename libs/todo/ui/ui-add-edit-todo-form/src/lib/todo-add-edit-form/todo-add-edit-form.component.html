@@ -13,8 +13,9 @@
       {{ !editedTodoValue ? 'Add' : 'Edit' }}
     </button>
     <button
+      type="button"
       [style.display]="editedTodoValue ? 'inline' : 'none'"
-      (click)="prevDefault($event); cancelTodoSelectionLocal()"
+      (click)="cancelTodoSelectionLocal()"
       mat-fab
       color="accent"
     >
