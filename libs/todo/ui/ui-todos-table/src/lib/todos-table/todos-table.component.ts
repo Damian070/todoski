@@ -8,7 +8,7 @@ import {
 import {Todo} from '../../../../../domain/src/lib/interfaces/todo.interface';
 import {MatDialog} from "@angular/material/dialog";
 import {UiDialogComponent} from "../../../../../../shared/ui-dialog/src/lib/ui-dialog/ui-dialog.component";
-import {take} from "rxjs/operators";
+import {filter} from "rxjs/operators";
 
 @Component({
   selector: 'todo-todos-table',
@@ -32,10 +32,8 @@ export class TodosTableComponent {
     const dialogRef = this.dialog.open(UiDialogComponent);
 
     dialogRef.afterClosed().pipe(
-      take(1)
-    ).subscribe(res => {
-      if(res) deleteFlag ? this.deleteTodo.emit(todo.id) : this.setTodoBackToPending.emit(todo);
-    });
+      filter(res => !!res)
+    ).subscribe( res => deleteFlag ? this.deleteTodo.emit(todo.id) : this.setTodoBackToPending.emit(todo));
   }
 
   finish(e: Todo): void {
