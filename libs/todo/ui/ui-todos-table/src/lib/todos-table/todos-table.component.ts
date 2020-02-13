@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { Todo } from '../../../../../domain/src/lib/interfaces/todo.interface';
 import { MatDialog } from '@angular/material/dialog';
-import { UiDialogComponent } from '../../../../../../shared/ui-dialog/src/lib/ui-dialog/ui-dialog.component';
+import { UiDialogComponent } from '../../../../../../shared/ui-confirmation-dialog/src/lib/ui-dialog/ui-dialog.component';
 import { filter } from 'rxjs/operators';
 
 @Component({
