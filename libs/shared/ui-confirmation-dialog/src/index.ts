@@ -1,1 +1,1 @@
-export * from './lib/ui-dialog.module';
+export * from './lib/ui-confirmation-dialog.module';

@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { Todo } from '../../../../../domain/src/lib/interfaces/todo.interface';
 import { MatDialog } from '@angular/material/dialog';
-import { UiDialogComponent } from '../../../../../../shared/ui-confirmation-dialog/src/lib/ui-dialog/ui-dialog.component';
+import { UiConfirmationDialogComponent } from '../../../../../../shared/ui-confirmation-dialog/src/lib/ui-confirmation-dialog/ui-confirmation-dialog.component';
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -28,7 +28,7 @@ export class TodosTableComponent {
   constructor(private dialog: MatDialog) {}
 
   confirmAction(deleteFlag: boolean, todo: Todo): void {
-    const dialogRef = this.dialog.open(UiDialogComponent);
+    const dialogRef = this.dialog.open(UiConfirmationDialogComponent);
 
     dialogRef
       .afterClosed()

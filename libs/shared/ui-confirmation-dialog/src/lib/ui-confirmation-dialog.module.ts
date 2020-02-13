@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UiDialogComponent } from './ui-dialog/ui-dialog.component';
+import { UiConfirmationDialogComponent } from './ui-confirmation-dialog/ui-confirmation-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [UiDialogComponent],
+  declarations: [UiConfirmationDialogComponent],
   imports: [CommonModule, MatDialogModule, MatButtonModule],
-  exports: [UiDialogComponent]
+  exports: [UiConfirmationDialogComponent]
 })
-export class UiDialogModule {}
+export class UiConfirmationDialogModule {}

@@ -4,10 +4,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 
 import { TodosTableComponent } from './todos-table/todos-table.component';
-import { UiDialogModule } from '@todo/shared/ui-confirmation-dialog';
+import { UiConfirmationDialogModule } from '@todo/shared/ui-confirmation-dialog';
 
 @NgModule({
-  imports: [CommonModule, MatCheckboxModule, MatButtonModule, UiDialogModule],
+  imports: [CommonModule, MatCheckboxModule, MatButtonModule, UiConfirmationDialogModule],
   declarations: [TodosTableComponent],
   exports: [TodosTableComponent]
 })

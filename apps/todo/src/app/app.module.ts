@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoShellModule } from '@todo/todo/shell';
 import { AppRoutingModule } from './app-routing.module';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { UiDialogComponent } from '../../../../libs/shared/ui-confirmation-dialog/src/lib/ui-dialog/ui-dialog.component';
+import { UiConfirmationDialogComponent } from '../../../../libs/shared/ui-confirmation-dialog/src/lib/ui-confirmation-dialog/ui-confirmation-dialog.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,7 +40,7 @@ import { UiDialogComponent } from '../../../../libs/shared/ui-confirmation-dialo
       logOnly: environment.production // Restrict extension to log-only mode
     })
   ],
-  entryComponents: [UiDialogComponent],
+  entryComponents: [UiConfirmationDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
