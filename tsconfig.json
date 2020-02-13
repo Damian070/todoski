@@ -28,7 +28,7 @@
         "libs/todo/ui/ui-todos-table/src/index.ts"
       ],
       "@todo/todo/ui/ui-add-edit-form": [
-        "libs/todo/ui-add-edit-form/src/index.ts"
+        "libs/todo/ui/ui-add-edit-form/src/index.ts"
       ]
     }
   },
