@@ -21,7 +21,9 @@
       "@todo/todo/feature": ["libs/todo/feature/src/index.ts"],
       "@todo/todo/shell": ["libs/todo/shell/src/index.ts"],
       "@todo/shared/ui-header": ["libs/shared/ui-header/src/index.ts"],
-      "@todo/shared/ui-dialog": ["libs/shared/ui-dialog/src/index.ts"],
+      "@todo/shared/ui-confirmation-dialog": [
+        "libs/shared/ui-confirmation-dialog/src/index.ts"
+      ],
       "@todo/todo/ui/ui-todos-table": [
         "libs/todo/ui/ui-todos-table/src/index.ts"
       ],

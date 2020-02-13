@@ -345,9 +345,9 @@
         }
       }
     },
-    "shared-ui-dialog": {
-      "root": "libs/shared/ui-dialog",
-      "sourceRoot": "libs/todo/ui/ui-dialog/src",
+    "shared-ui-confirmation-dialog": {
+      "root": "libs/shared/ui-confirmation-dialog",
+      "sourceRoot": "libs/todo/ui/ui-confirmation-dialog/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -355,17 +355,20 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/shared/ui-dialog/tsconfig.lib.json",
-              "libs/shared/ui-dialog/tsconfig.spec.json"
+              "libs/shared/ui-confirmation-dialog/tsconfig.lib.json",
+              "libs/shared/ui-confirmation-dialog/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/todo/ui/ui-dialog/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/todo/ui/ui-confirmation-dialog/**"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/shared/ui-dialog/jest.config.js",
-            "tsConfig": "libs/shared/ui-dialog/tsconfig.spec.json"
+            "jestConfig": "libs/shared/ui-confirmation-dialog/jest.config.js",
+            "tsConfig": "libs/shared/ui-confirmation-dialog/tsconfig.spec.json"
           }
         }
       }

@@ -42,7 +42,7 @@
     "todo-ui": {
       "tags": []
     },
-    "shared-ui-dialog": {
+    "shared-ui-confirmation-dialog": {
       "tags": []
     }
   }
