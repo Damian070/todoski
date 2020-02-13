@@ -257,7 +257,7 @@
             ],
             "exclude": [
               "**/node_modules/**",
-              "!libs/shared/ui-add-edit-todo-form/**"
+              "!libs/todo/ui/ui-add-edit-todo-form/**"
             ]
           }
         },
@@ -285,7 +285,7 @@
             ],
             "exclude": [
               "**/node_modules/**",
-              "!libs/shared/ui-add-edit-todo-form/**"
+              "!libs/todo/ui/ui-add-edit-todo-form/**"
             ]
           }
         },
