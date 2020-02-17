@@ -7,7 +7,12 @@ import { TodosTableComponent } from './todos-table/todos-table.component';
 import { UiConfirmationDialogModule } from '@todo/shared/ui-confirmation-dialog';
 
 @NgModule({
-  imports: [CommonModule, MatCheckboxModule, MatButtonModule, UiConfirmationDialogModule],
+  imports: [
+    CommonModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    UiConfirmationDialogModule
+  ],
   declarations: [TodosTableComponent],
   exports: [TodosTableComponent]
 })

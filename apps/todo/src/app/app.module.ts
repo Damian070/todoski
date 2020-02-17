@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoShellModule } from '@todo/todo/shell';
 import { AppRoutingModule } from './app-routing.module';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { UiConfirmationDialogComponent } from '../../../../libs/shared/ui-confirmation-dialog/src/lib/ui-confirmation-dialog/ui-confirmation-dialog.component';
 
 @NgModule({
