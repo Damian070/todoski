@@ -43,6 +43,7 @@ describe('Todos facade', () => {
 
     store = TestBed.get(Store);
     facade = TestBed.get(TodosFacade);
+    jest.spyOn(store, 'dispatch');
   });
 
   it('should be defined', () => {
@@ -50,7 +51,7 @@ describe('Todos facade', () => {
     expect(facade).toBeTruthy();
   });
 
-  it('should load exmpty list of todos', async done => {
+  it('should load an empty list of todos', async done => {
     try {
       let todosActiveList = await readFirst(facade.active$);
       let todosFinishedList = await readFirst(facade.finished$);
@@ -66,5 +67,10 @@ describe('Todos facade', () => {
     }
   });
 
+  it('should dispatch addTodoAction', () => {
+    const action = new fromTodosActions.AddTodo({ id: 3, goal: 'test' });
 
+    facade.addTodo(action.payload);
+    expect(store.dispatch).toHaveBeenCalled();
+  });
 });
